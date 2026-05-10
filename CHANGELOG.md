@@ -7,4 +7,5 @@
 — [LRL-6] Add ability to search resources by keyword
 — [LRL-7] Add ability to filter resources by type and difficulty
 — [LRL-8] Add ability to view full resource details
+— [LRL-17] Add ability to create categories (admin)
 

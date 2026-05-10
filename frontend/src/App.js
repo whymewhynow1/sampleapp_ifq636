@@ -6,6 +6,7 @@ import Profile from './pages/Profile';
 import Tasks from './pages/Tasks';
 import Resources from './pages/Resources';
 import ResourceDetail from './pages/ResourceDetail';
+import CreateCategory from './pages/admin/CreateCategory';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/resources/:id" element={<ResourceDetail />} />
+        <Route path="/admin/categories/new" element={<CreateCategory />} />
       </Routes>
     </Router>
   );
