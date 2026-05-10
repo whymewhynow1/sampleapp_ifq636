@@ -6,4 +6,5 @@
 — [LRL-5] Add ablitiy to browse learning resources
 — [LRL-6] Add ability to search resources by keyword
 — [LRL-7] Add ability to filter resources by type and difficulty
+— [LRL-8] Add ability to view full resource details
 

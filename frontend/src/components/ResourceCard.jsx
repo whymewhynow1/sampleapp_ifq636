@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const difficultyStyles = {
     beginner:     'text-green-600 bg-green-50',
     intermediate: 'text-yellow-600 bg-yellow-50',
@@ -24,14 +26,22 @@ const ResourceCard = ({ resource }) => {
             {resource.category && (
                 <p className="text-xs text-gray-400">Category: {resource.category}</p>
             )}
-            <a
-                href={resource.url}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-auto text-sm text-blue-500 hover:underline"
-            >
-                Open resource →
-            </a>
+            <div className="mt-auto flex items-center justify-between">
+                <Link
+                    to={`/resources/${resource._id}`}
+                    className="text-sm text-gray-500 hover:underline"
+                >
+                    View details
+                </Link>
+                <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-blue-500 hover:underline"
+                >
+                    Open resource →
+                </a>
+            </div>
         </div>
     );
 };
