@@ -2,13 +2,19 @@ const Resource = require('../models/Resource');
 
 const getResources = async (req, res) => {
     try {
-        const { search } = req.query;
-        const filter = search
-            ? { $or: [
+        const { search, type, difficulty, category } = req.query;
+        const filter = {};
+
+        if (search) {
+            filter.$or = [
                 { title:       { $regex: search, $options: 'i' } },
                 { description: { $regex: search, $options: 'i' } },
-              ] }
-            : {};
+            ];
+        }
+        if (type)       filter.type       = type;
+        if (difficulty) filter.difficulty = difficulty;
+        if (category)   filter.category   = { $regex: category, $options: 'i' };
+
         const resources = await Resource.find(filter);
         res.json(resources);
     } catch (error) {
